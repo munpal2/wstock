@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <script defer src="script.js"></script>
+        <div id="top-bar">
+            <div>
+                <div id="setting-open">설정</div>
+                <div onclick="refill(0)">1조</div>
+                <div onclick="refill(1)">2조</div>
+                <div onclick="refill(2)">3조</div>
+                <div onclick="refill(3)">4조</div>
+                <div onclick="refill(4)">5조</div>
+                <div onclick="refill(5)">6조</div>
+                <div id="next-turn"><- (저기)</div>
+            </div>
+        </div>
+        <div id="container">
+            <div id="total-essets">
+                <div id="te-group">설정 파일을</div>
+                <div id="te-value">$</div>
+                <div id="te-fluc">입력해주세요</div>
+            </div>
+            <div id="stocks">
+                <div>
+                    <div>
+                        <div class="st-big">설정</div>
+                        <div class="st-small">파일이</div>
+                    </div>
+                    <div>
+                        <div class="st-big st-value">있어야</div>
+                        <div class="st-small st-fluc"><span style="color: red">제대로</span></div>
+                    </div>
+                </div>
+            </div>
+            <form id="buy-form">
+                <select name="companys" id="company-select">
+                    <option value="0">실행이 가능합니다</option>
+                </select>
+                <input type="number" id="count-select" min="1"> 주
+                <button type="button" id="buy-btn">매수</button>
+                <button type="button" id="sell-btn">매도</button>
+            </form>
+            <div id="setting" style="display: none">
+                <form id="setting-form">
+                    <textarea id="setting-file" rows="10" cols="80" placeholder="미리-작성된 세팅 파일을 복붙하세요..."></textarea>
+                    <button type="button" id="apply">적용</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

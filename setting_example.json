@@ -1,0 +1,10 @@
+{
+    "year_max": 3,
+    "stock_count": 2,
+    "group_count": 6,
+    "stock_name": ["삼성전자", "비트코인"],
+    "price_initial": [10, 20],
+    "money_initial": [100, 100, 100, 100, 100, 100],
+    "fluctuation": [[8, 9, 10], 
+                    [100, 200, -90]]
+}

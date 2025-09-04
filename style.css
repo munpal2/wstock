@@ -1,0 +1,176 @@
+body {
+    color: #1a1a1a;
+}
+
+option:hover {
+    background-color: slateblue;
+}
+
+#top-bar {
+    opacity: 0;
+    position: absolute;
+    top: -30px;
+    left: 0px;
+    height: 60px;
+    width: 100%;
+    border-radius: 0px 0px 15px 15px;
+    background-color: slateblue;
+}
+
+#top-bar:hover {
+    opacity: 1;
+    top: 0px;
+    transition: all 0.5s;
+}
+
+#top-bar > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 66%;
+    margin: auto;
+}
+
+#top-bar > div div {
+    line-height: 60px;
+    color: white;
+}
+
+#top-bar > div div:hover {
+    font-weight: bold;
+    margin-top: -5px;
+    transition: all 0.3s;
+}
+
+#container {
+    width: 66%;
+    margin: 100px auto;
+}
+
+#total-essets {
+    line-height: 80px;
+    font-weight: bold;
+}
+
+#te-group {
+    font-size: 25px;
+    margin-bottom: -15px;
+    color: slateblue;
+}
+
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+#te-value {
+    transition: --num 3s;
+    counter-set: num var(--num);
+    display: inline;
+    font-size: 80px;
+}
+
+#te-value::after {
+    content: counter(num);
+}
+
+#te-fluc {
+    display: inline;
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+#stocks {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+    background-color: #dddddd;
+}
+
+#stocks > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 40px;
+    margin: 5px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+}
+
+.st-big {
+    display: inline;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 10px;
+}
+
+.st-small {
+    display: inline;
+    font-size: 15px;
+    margin-top: 25px;
+    margin: 10px;
+}
+
+.st-value {
+    margin-right: -7px;
+}
+
+.st-fluc {
+    font-weight: bold;
+}
+
+#buy-form {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+#company-select {
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 23px;
+    height: 31px;
+}
+
+#count-select {
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 23px;
+    width: 60px;
+    height: 25px;
+}
+
+#buy-form > button {
+    height: 30px;
+    background-color: white;
+    border: 1px solid #1a1a1a;
+    border-radius: 7px;
+}
+
+#buy-form > button:hover {
+    font-weight: bold;
+    color: white;
+    border: 1px solid #1a1a1a;
+    background-color: slateblue;
+}
+
+#setting {
+    position: absolute;
+    background-color: #dddddd;
+    width: 100%;
+    top: 60px;
+    left: 0px;
+}
+
+#setting-form > input {
+    margin-top: 20px;
+    width: 100%;
+}
