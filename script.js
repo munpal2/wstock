@@ -158,7 +158,7 @@ function refill(group_idx) {
             push_to_stocks(setting.stock_name[i], cur.count, Math.round(cur.value_now()), fluctuation_helper(cur.fluc(), cur.value_prev()));
         }
     }
-    push_to_stocks("현금", "", group_money[group_idx], "");
+    push_to_stocks("현금", "", Math.round(group_money[group_idx]), "");
     fluc_sum = value_sum - value_sum_prev;
 
     document.getElementById("te-value").innerText="$";
