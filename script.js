@@ -155,13 +155,13 @@ function refill(group_idx) {
         value_sum_prev += cur.value_prev();
 
         if (cur.count != 0) {
-            push_to_stocks(setting.stock_name[i], cur.count, cur.value_now().toFixed(2), fluctuation_helper(cur.fluc(), cur.value_prev()));
+            push_to_stocks(setting.stock_name[i], cur.count, Math.round(cur.value_now()), fluctuation_helper(cur.fluc(), cur.value_prev()));
         }
     }
-    push_to_stocks("현금", "", group_money[group_idx].toFixed(2), "");
+    push_to_stocks("현금", "", Math.round(group_money[group_idx]), "");
     fluc_sum = value_sum - value_sum_prev;
 
     document.getElementById("te-value").innerText="$";
-    document.getElementById("te-value").style.setProperty("--num", `${value_sum.toFixed(2)}`);
+    document.getElementById("te-value").style.setProperty("--num", `${Math.round(value_sum)}`);
     document.getElementById("te-fluc").innerHTML = fluctuation_helper(fluc_sum, value_sum_prev)
 }
