@@ -142,7 +142,7 @@ function refill(group_idx) {
     document.getElementById("te-group").innerText = `${group_idx + 1}조의 총자산`;
 
     function fluctuation_helper(fluc, value_prev) {
-        return `<span style="color: ${(fluc >= 0 ? "red\">+₩" : "blue\">-₩")}${Math.abs(Math.round(fluc))}
+        return `<span style="color: ${(Math.round(fluc) >= 0 ? "red\">+₩" : "blue\">-₩")}${Math.abs(Math.round(fluc))}
         (${Math.abs(((fluc / value_prev) * 100).toFixed(2))}%)</span>`;
     }
     
