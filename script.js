@@ -5,13 +5,23 @@ let current_year = 0;
 let current_page = 0;
 
 setting = {
-    year_max: 10,
-    stock_count: 0,
-    group_count: 0,
-    stock_name: [],
-    price_initial: [],
-    money_initial: [],
-    fluctuation: []
+    year_max: 11,
+    stock_count: 10,
+    group_count: 6,
+    stock_name: ["A 제조", "B 제조", "C IT", "D IT", "E 바이오", "F 바이오", "G 금융", "H 엔터", "I 식품", "J 조선"],
+    price_initial: [25000, 170000, 140000, 36000, 137000, 80000, 35000, 35000, 20000, 60000],
+    money_initial: [1000000, 1000000, 1000000, 1000000, 1000000, 1000000],
+    fluctuation: [[-5, 43, 41, -34, 44, 45, -3, -29, -8, -32, 31], 
+                    [-11, -2, 6, -24, 5, 59, 28, -27, 14, 25, 4],
+                    [-8, 17, 12, -30, 52, 56, 29, -53, 26, -11, 4],
+                    [125, -28, -7, -13, 41, 16, 30, -32, 3, -4, -8],
+                    [33, -14, 43, -39, -3, 200, -46, -40, -3, 43, -26],
+                    [600, -58, 108, -19, -34, 50, -23, 10, 20, -20, 8],
+                    [-8, 30, 48, -26, 2, -8, 26, -11, 11, 53, 53],
+                    [26, -40, 33, 50, -26, -22, 150, 3, 20, -17, 80],
+                    [30, 46, 138, -46, 72, 12, -6, 33, 70, 250, 100],
+                    [-72, -11, -37, 145, -18, -1, -15, -17, 49, 40, 200]
+                ]
 }
 
 //console.log(JSON.stringify(setting));
@@ -165,3 +175,5 @@ function refill(group_idx) {
     document.getElementById("te-value").style.setProperty("--num", `${Math.round(value_sum)}`);
     document.getElementById("te-fluc").innerHTML = fluctuation_helper(fluc_sum, value_sum_prev)
 }
+
+apply_setting();
