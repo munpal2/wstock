@@ -132,7 +132,7 @@ function refill(group_idx) {
     document.getElementById("te-group").innerText = `${group_idx + 1}조의 총자산`;
 
     function fluctuation_helper(fluc, value_prev) {
-        return `<span style="color: ${(fluc > 0 ? "red\">+$" : "blue\">$")}${Math.round(fluc)}
+        return `<span style="color: ${(fluc > 0 ? "red\">+₩" : "blue\">₩")}${Math.round(fluc)}
         (${Math.abs(((fluc / value_prev) * 100).toFixed(2))}%)</span>`;
     }
     
@@ -143,7 +143,7 @@ function refill(group_idx) {
         let div_obj = document.createElement("div");
         div_obj.innerHTML =    `<div><div class="st-big">${name}</div>
                                 <div class="st-small">${count}${count != "" ? "주" : ""}</div></div>
-                                <div><div class="st-big st-value">$${value}</div>
+                                <div><div class="st-big st-value">₩${value}</div>
                                 <div class="st-small st-fluc">${fluc}</div></div>`
         stocks_obj.appendChild(div_obj);
     }
@@ -161,7 +161,7 @@ function refill(group_idx) {
     push_to_stocks("현금", "", Math.round(group_money[group_idx]), "");
     fluc_sum = value_sum - value_sum_prev;
 
-    document.getElementById("te-value").innerText="$";
+    document.getElementById("te-value").innerText="₩";
     document.getElementById("te-value").style.setProperty("--num", `${Math.round(value_sum)}`);
     document.getElementById("te-fluc").innerHTML = fluctuation_helper(fluc_sum, value_sum_prev)
 }
