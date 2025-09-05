@@ -114,7 +114,7 @@ function set_option() {
         let opt_obj = document.createElement("option");
         opt_obj.value = i.toString();
         opt_obj.innerText = setting.stock_name[i];
-        opt_obj.title = `1주당 $${stock_price[i].toFixed(2)}`;
+        opt_obj.title = `1주당 ₩${stock_price[i].toFixed(2)}`;
         dropbox_obj.appendChild(opt_obj);
     }
 }
@@ -132,7 +132,7 @@ function refill(group_idx) {
     document.getElementById("te-group").innerText = `${group_idx + 1}조의 총자산`;
 
     function fluctuation_helper(fluc, value_prev) {
-        return `<span style="color: ${(fluc > 0 ? "red\">+₩" : "blue\">₩")}${Math.round(fluc)}
+        return `<span style="color: ${(fluc >= 0 ? "red\">+₩" : "blue\">-₩")}${Math.abs(Math.round(fluc))}
         (${Math.abs(((fluc / value_prev) * 100).toFixed(2))}%)</span>`;
     }
     
